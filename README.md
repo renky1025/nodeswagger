@@ -10,3 +10,7 @@ Get the repo cloned to local using Git:
 
 * update server post in .env file,
 * also need to update server host and post in swagger index.html
+
+
+* get js-docs by url: http://localhost:5150/swagger.json
+* open swagger page with url: http://localhost:5150/index.html
