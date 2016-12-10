@@ -1,13 +1,12 @@
 const express = require('express');
-const morgan = require('morgan');
 const app = express();
 const bodyParser = require('body-parser');
-const swagger = require('swagger-express');
 const swaggerJSDoc = require('swagger-jsdoc');
 const path = require('path');
+const logger = require('./logger');
+require('./models/connection');
 // configure app to use bodyParser()
 // this will let us get the data from a POST
-app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.all('/*', (req, res, next) =>{
@@ -16,7 +15,6 @@ app.all('/*', (req, res, next) =>{
 });
 const routers = require('./bearRouter');
 const movies = require('./movieRouter'); 
-const test = require('./test'); 
 
 // ROUTES FOR OUR API
 // =============================================================================

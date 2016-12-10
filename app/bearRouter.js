@@ -1,14 +1,12 @@
 const express = require('express');
 const app = express();
 const router = express.Router();              // get an instance of the express Router
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/Iganiq8o');
 const Bear = require('./models/bear');
+const logger = require('./logger');
 
 // middleware to use for all requests
 router.use((req, res, next) => {
     // do logging
-    console.log('Something is happening.');
     next(); // make sure we go to the next routes and don't stop here
 });
 
@@ -20,7 +18,7 @@ router.get('/', (req, res) => {
 // more routes for our API will happen here
 /**
  * @swagger
- * definition:
+ * definitions:
  *   Bear:
  *     properties:
  *       name:

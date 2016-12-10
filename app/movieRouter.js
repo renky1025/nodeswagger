@@ -4,7 +4,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * definition:
+ * definitions:
  *   Movie:
  *     properties:
  *       title:
